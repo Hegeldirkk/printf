@@ -10,19 +10,25 @@ int _printf(const char *format, ...)
 	/* Initialisation de variable et de la struture var_list */
 	/*int countper = 0;*/
 	/*int i = 0;*/
-	char actuelChar;
-	va_list arg;
-	va_start(arg, format);
+	char actualChar;
+	va_list argsList;
+	va_start(argsList, format);
 
-	/*actuelChar = *format;*/
-	while ((actuelChar = *format) != '\0')
+	/*actualChar = *format;*/
+	while ((actualChar = *format) != '\0')
 	{
-		format ++;
-		if (actuelChar != '%')
+		/*character is not % so print it*/
+		if (actualChar != '%')
 		{
-			putchar(actuelChar);
+			_putchar(actualChar);
 		}
+		else /*characteur is % so check next character*/
+		{
+			/*switch on the next character*/
+			
+		}
+		format++;
 	}
-	va_end(arg);
+	va_end(argsList);
 	return (0);
 }
