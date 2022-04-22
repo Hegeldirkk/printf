@@ -9,25 +9,44 @@ int _printf(const char *format, ...)
 {
 	/* Initialisation de variable et de la struture var_list */
 	/*int countper = 0;*/
-	/*int i = 0;*/
-	char actualChar;
+	int i, j;
+	char st;
+	char *str;
 	va_list argsList;
 	va_start(argsList, format);
 
-	/*actualChar = *format;*/
-	while ((actualChar = *format) != '\0')
+	while (format[i] != '\0')
 	{
-		/*character is not % so print it*/
-		if (actualChar != '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			_putchar(actualChar);
+			switch(format[i + 1])
+			{
+				case 'c':
+					st = va_arg(argsList, int);
+				_putchar(st);
+				break;
+
+				case 's':
+					j=0;
+					str = va_arg(argsList, char *);
+					while(str[j] != '\0')
+					{
+						_putchar(str[j]);
+						j++;
+					}
+				break;
+
+				case '%':
+					_putchar('%');
+				break;
+			}
+			i++;
 		}
-		else /*characteur is % so check next character*/
+		else
 		{
-			/*switch on the next character*/
-			
+			_putchar(format[i]);
 		}
-		format++;
+		i++;
 	}
 	va_end(argsList);
 	return (0);

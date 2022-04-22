@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	/* Initialisation de variable et de la struture var_list */
 	/*int countper = 0;*/
 	int i, j;
+	char st;
 	char *str;
 	va_list argsList;
 	va_start(argsList, format);
@@ -21,8 +22,8 @@ int _printf(const char *format, ...)
 			switch(format[i + 1])
 			{
 				case 'c':
-					str = (char*)va_arg(argsList, int);
-					_putchar(str);
+					st = va_arg(argsList, int);
+				_putchar(st);
 				break;
 
 				case 's':
