@@ -12,9 +12,9 @@ int _printf(const char *format, ...)
 	/*int i = 0;*/
 	char actualChar;
 	va_list argsList;
-	va_start(argsList, format);
-
+	va_start (argsList, format);
 	/*actualChar = *format;*/
+
 	while ((actualChar = *format) != '\0')
 	{
 		/*character is not % so print it*/
@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 		else /*characteur is % so check next character*/
 		{
 			/*switch on the next character*/
-			
 		}
 		format++;
 	}
