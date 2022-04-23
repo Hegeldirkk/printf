@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	int i, j;
 	char st;
 	char *str;
+	unsigned int number;
 	va_list argsList;
 	va_start(argsList, format);
 
@@ -34,10 +35,6 @@ int _printf(const char *format, ...)
 						_putchar(str[j]);
 						j++;
 					}
-				break;
-
-				case '%':
-					_putchar('%');
 				break;
 			}
 			i++;
