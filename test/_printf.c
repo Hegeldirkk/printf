@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			switch(format[i + 1])
+			switch (format[i + 1])
 			{
 				case 'c':
 					st = va_arg(argsList, int);
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				break;
 
 				case 's':
-					j=0;
+					j = 0;
 					str = va_arg(argsList, char *);
 					while(str[j] != '\0')
 					{
