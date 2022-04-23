@@ -36,6 +36,14 @@ int _printf(const char *format, ...)
 						j++;
 					}
 				break;
+				case '%':
+					_putchar('%');
+				break;
+				case 'd':
+					number = va_arg(argsList, int);
+					print_number(number);
+				break;
+					
 			}
 			i++;
 		}
